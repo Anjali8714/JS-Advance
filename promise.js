@@ -37,6 +37,21 @@
 //     console.log(error);
 // });
 
+const promise=new Promise((resolve,reject) => {
+let success=true;
+if(success){
+    resolve("operation successfullly");
+}else{
+    reject("operation failure");
+}
+});
+
+promise
+.then((res) => console.log(res))
+.catch((err) => console.log(err))
+.finally(() => console.log("This runs no matter what"));
+
+
 // adding element another example
 
 
@@ -109,7 +124,7 @@
 //     resolve(['javascript','java']);
 // });
 // let promise1=new Promise((resolve,reject) => {
-//     reject(['HTML','css']);
+//     resolve(['HTML','css']);
 // });
 // let promise2=new Promise((resolve,reject) => {
 //     resolve(['react','angular']);
@@ -126,20 +141,20 @@
 
 //promise.race()
 
-let promise= new Promise((resolve,reject) => {
-    reject(['javascript','java']);
-});
-let promise1=new Promise((resolve,reject) => {
-    resolve(['HTML','css']);
-});
-let promise2=new Promise((resolve,reject) => {
-    resolve(['react','angular']);
-});
-let allpromise=Promise.race([promise,promise1,promise2])
-allpromise
-.then((result) => {
-    console.log(result);
-})
-.catch((error) => {
-    console.log(error);
-});
+// let promise= new Promise((resolve,reject) => {
+//     reject(['javascript','java']);
+// });
+// let promise1=new Promise((resolve,reject) => {
+//     resolve(['HTML','css']);
+// });
+// let promise2=new Promise((resolve,reject) => {
+//     resolve(['react','angular']);
+// });
+// let allpromise=Promise.race([promise,promise1,promise2])
+// allpromise
+// .then((result) => {
+//     console.log(result);
+// })
+// .catch((error) => {
+//     console.log(error);
+// });
